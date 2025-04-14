@@ -9,10 +9,10 @@ server.on('connection', (socket) => {
   console.log('🔌 Client connected');
 
   socket.on('message', (message) => {
-    console.log('📨 Received:', message);
+    console.log('📨 :', message);
     server.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
-        client.send(`Echo: ${message}`);
+        client.send(` ${message}`);
       }
     });
   });
